@@ -1,0 +1,1 @@
+ansible test_sun -m shell -a "docker exec gpt_libai_sjf bash -c 'cd /data_32T/home/sunjinfeng/workspace/cluster_utils/dockers && bash install_libai.sh'" -i ~/inventory.ini

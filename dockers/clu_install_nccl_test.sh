@@ -1,0 +1,1 @@
+ansible install_libai -m shell -a "docker exec gpt_libai_sjf bash -c 'cd /data_32T/home/sunjinfeng/workspace/cluster_utils/dckers && bash install_nccl_test.sh'" -i ~/inventory.ini

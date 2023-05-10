@@ -1,0 +1,1 @@
+bash cluster_train_libai_gpt.sh 008,009 10.0.0.83 16
