@@ -10,7 +10,6 @@ python3 -m pip list | grep libai || LIBAI_INSTALLED=0
 if [ ${LIBAI_INSTALLED} == 0 ]; then
   echo "==> libai not installed, installing..."
   python3 -m pip install -r requirements.txt
-  #python3 -m pip install -e . --user
   python3 -m pip install -e .
 else
   echo "==> skip installing libai"

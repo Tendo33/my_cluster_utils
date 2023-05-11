@@ -14,7 +14,7 @@ for (( i=0; i<$num_hosts; i++ )); do
   #ansible $host -m shell -a "docker exec gpt_libai bash -c 'cd /data_32T/home/xuxiaoyu/workspace && bash train_libai_gpt.sh'" -i ~/inventory.ini &
 
   #32n
-  ansible $host -m shell -a "docker exec gpt_libai bash -c 'cd /data_32T/home/xuxiaoyu/workspace && bash train_libai_gpt.sh 0 $num_hosts 8 $i $master_addr 1 1 true true false $3 $4'" -i ~/inventory.ini &
+  ansible $host -m shell -a "docker exec gpt_libai bash -c 'cd /data_32T/home/sunjinfeng/workspace && bash train_libai_gpt.sh 0 $num_hosts 8 $i $master_addr 1 1 true true false $3 $4'" -i ~/inventory.ini &
 
   # 56n
   #ansible $host -m shell -a "docker exec gpt_libai bash -c 'cd /data_32T/home/xuxiaoyu/workspace && bash train_libai_gpt.sh 0 $num_hosts 8 $i $master_addr 1 1 true true false $3 $4'" -i ~/inventory.ini &
