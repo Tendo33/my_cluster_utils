@@ -1,0 +1,15 @@
+- hosts: test
+  gather_facts: yes
+  tasks:
+    - name: Check GPU memory usage and Python processes
+      shell: |
+        gpu_memory=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits)
+        python_process=$(ps aux | grep python | grep -v grep)
+        echo "$gpu_memory $python_process"
+      register: gpu_python_status
+
+    - name: Print machine indexes with GPU memory < 100 Mib  and no Python processes
+      debug:
+        msg: "Machine {{ inventory_hostname }}: GPU memory usage is below 100 MiB and no Python processes are running."
+      when: "'python' not in gpu_python_status.stdout_lines[1] and gpu_python_status.stdout_lines[0]|int < 100"
+
