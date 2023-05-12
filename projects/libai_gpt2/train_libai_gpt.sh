@@ -20,7 +20,7 @@ export ONEFLOW_COMM_NET_IB_HCA=mlx5_bond_1:1
 
 python3 -m oneflow --doctor
 
-LIBAI_PWD=/data_32T/home/xuxiaoyu/workspace
+LIBAI_PWD=/data_32T/home/sunjinfeng/workspace
 
 
 CONFIG=$1
