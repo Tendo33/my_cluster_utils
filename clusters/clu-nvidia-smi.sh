@@ -1,4 +1,4 @@
-ansible test -m shell -a "nvidia-smi" 
+ansible else -m shell -a "nvidia-smi" 
 ansible test -m shell -a "docker ps -a" 
 
 ansible test -m shell -a "ps -ef | grep python" 
