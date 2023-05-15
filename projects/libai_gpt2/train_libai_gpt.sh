@@ -5,18 +5,10 @@ export NCCL_IB_DISABLE=0
 export NCCL_DEBUG=INFO
 export NCCL_IB_GID_INDEX=3
 export NCCL_GDR_LEVEL=2
-export NCCL_TOPO_FILE=/data_32T/home/workspace/nccl-tests/nccl_topo_a800_1.6t.xml
+# export NCCL_TOPO_FILE=/data_32T/home/workspace/nccl-tests/nccl_topo_a800_1.6t.xml
 export NCCL_IB_QPS_PER_CONNECTION=4
-#export NCCL_IB_TC=160
-#export NCCL_IB_HCA=mlx5_bond_0:1,mlx5_bond_1:1,mlx5_bond_2:1,mlx5_bond_3:1,mlx5_bond_4:1,mlx5_bond_5:1,mlx5_bond_6:1,mlx5_bond_7:1
-
 export ONEFLOW_COMM_NET_IB_GID_INDEX=3
-#export ONEFLOW_COMM_NET_IB_HCA=$NCCL_IB_HCA
 export ONEFLOW_COMM_NET_IB_HCA=mlx5_bond_1:1
-
-# Dangerous, May casue long time to fail
-#export ONEFLOW_RPC_BOOTSTRAP_SERVER_MAX_RETRY_TIMES=60
-#export ONEFLOW_RPC_CLIENT_MAX_RETRY_TIMES=60
 
 python3 -m oneflow --doctor
 
@@ -36,21 +28,9 @@ USE_FP16=${9:-true}
 ACTIVATION_CHECKPOINT=${10:-false}
 MICRO_BATCH_SIZE=${11:-4}
 GLOBAL_BATCH_SIZE=${12:-4}
-#ZERO_ENABLE=${13:-false}
-#ZERO_STAGE=${14:-2}
-#TRAIN_ITERS=${15:-220}
-#LOG_PERIOD=${16:-100}
-#NUM_LAYER=${17:-12}
-#NUM_ATT_HEADS=${18:-12}
-#HIDDEN_SIZE=${19:-768}
-#INTERMEDIATE_SIZE=${20:-3072}
-#HEAD_SIZE=${21:-64}
-#SAVE_MODEL=${22:-false}
-#UNSET_DROPOUT=${23:-false}
 
-#ONEFLOW_BRANCH_NAME=${1:-"master"}
-#LIBAI_BRANCH_NAME=${2:-"main"}
-#INSTALL=${3:-false}
+
+
 ONEFLOW_BRANCH_NAME="master"
 LIBAI_BRANCH_NAME="main"
 INSTALL=false
