@@ -1,6 +1,6 @@
 set -ex
 
-LIBAI_PWD=/data_32T/home/sunjinfeng/workspace
+LIBAI_PWD=/data_turbo/home/sunjinfeng/workspace
 
 cd libai
 

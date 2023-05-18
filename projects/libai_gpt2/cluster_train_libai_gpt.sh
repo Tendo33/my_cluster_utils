@@ -10,6 +10,6 @@ num_hosts=$(echo $hosts | wc -w)
 for (( i=0; i<$num_hosts; i++ )); do
   host=$(echo $hosts | cut -d " " -f $((i+1)))
 
-  ansible $host -m shell -a "docker exec gpt_libai bash -c 'cd /data_32T/home/sunjinfeng/workspace/libai && bash tools/args_train.sh configs/gpt2_pretrain.py $num_hosts 8 $i $master_addr 1 1 true true ture 2 $ACC false 2 220 100 48 144 2304 9216'" & 
+  ansible $host -m shell -a "docker exec gpt_libai bash -c 'cd /data_turbo/home/sunjinfeng/workspace/libai && bash tools/args_train.sh configs/gpt2_pretrain.py $num_hosts 8 $i $master_addr 1 1 true true ture 2 $ACC false 2 220 100 48 144 2304 9216'" & 
 
 done

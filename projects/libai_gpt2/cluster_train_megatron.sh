@@ -10,6 +10,6 @@ num_hosts=$(echo $hosts | wc -w)
 for (( i=0; i<$num_hosts; i++ )); do
     host=$(echo $hosts | cut -d " " -f $((i+1)))
 
-    ansible $host -m shell -a "docker exec gpt_libai bash -c 'cd /data_32T/home/sunjinfeng/workspace/Megatron && bash examples/megatron_args_pretrain_gpt2.sh $num_hosts 8 $i $master_addr 1 1 true true true 2 $ACC false 2 220 100 48 144 2304 9216'" & 
+    ansible $host -m shell -a "docker exec gpt_libai bash -c 'cd /data_turbo/home/sunjinfeng/workspace/Megatron && bash examples/megatron_args_pretrain_gpt2.sh $num_hosts 8 $i $master_addr 1 1 true true true 2 $ACC false 2 220 100 48 144 2304 9216'" & 
 
 done
