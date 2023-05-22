@@ -56,9 +56,3 @@ ansible test -m shell -a "docker exec gpt_test_sjf bash -c 'chmod 644 ~/.ssh/con
 
 
 
-
-
-
-
-
-Megatron_gpt2_graph_nl80_nah144_hs2304__actrue_DP16_MP2_PP2_zerofalse_stage2_mbs16_gbs256_acc1_8n8g.log
