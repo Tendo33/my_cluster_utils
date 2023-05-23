@@ -39,20 +39,16 @@ ansible test -m shell -a "docker stop gpt_test2_sjf"
 ansible test -m shell -a "docker start gpt_test2_sjf"
 ansible test -m shell -a "docker rm gpt_test2_sjf"
 
-# 查看 libai
+# 查看是否安装 libai
 ansible test -m shell -a "docker exec gpt_test_sjf bash -c 'pip list | grep libai'"
-
 ansible test -m shell -a "docker ps -a| grep sjf"
 
-
-python3 -m pip uninstall -y libai
-python3 -m pip install -r requirements.txt
-python3 -m pip install -e .
-
+# 分发ssh配置文件
 ansible test -m shell -a "docker exec test_libai_sjf bash -c  'sed -i 's/Port 62620/Port 10097/g' /root/.ssh/config && /usr/sbin/sshd -p 10097'"
 ansible test -m shell -a "docker exec gpt_test_sjf bash -c 'cp -f /data_turbo/home/sunjinfeng/workspace/config /root/.ssh/'"
-
 ansible test -m shell -a "docker exec gpt_test_sjf bash -c 'chmod 644 ~/.ssh/config'"
 
-
+# 关闭所有python进程，并杀掉所有僵尸进程
+ansible test -m shell -a "docker exec gpt_test2_sjf bash -c 'pkill python'"
+ansible test -m shell -a "docker exec gpt_test2_sjf bash -c 'pkill defunct'"
 
