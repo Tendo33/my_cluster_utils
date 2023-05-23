@@ -36,7 +36,7 @@ ansible install_libai -m shell -a "docker load -i /data_turbo/docker_images/ngc_
 
 # 停止并删除容器
 ansible test -m shell -a "docker stop gpt_test2_sjf"
-ansible test -m shell -a "docker start gpt_test2_sjf"
+ansible test -m shell -a "docker start gpt_test_sjf"
 ansible test -m shell -a "docker rm gpt_test2_sjf"
 
 # 查看是否安装 libai
