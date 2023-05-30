@@ -35,10 +35,10 @@ ansible test -m shell -a "docker load -i /data_32T/docker_images/ngc_ssh_ib54_co
 ansible install_libai -m shell -a "docker load -i /data_turbo/docker_images/ngc_ssh_21.07_py39.tar"
 
 # 停止并删除容器
-ansible test -m shell -a "docker stop gpt_test2_sjf"
+ansible test -m shell -a "docker stop gpt_test_sjf"
 ansible test -m shell -a "docker start gpt_test_sjf"
 ansible test -m shell -a "docker rm gpt_test2_sjf"
-
+ansible test -m shell -a "docker ps -a | grep sjf"
 # 查看是否安装 libai
 ansible test -m shell -a "docker exec gpt_test_sjf bash -c 'pip list | grep libai'"
 ansible test -m shell -a "docker ps -a| grep sjf"
@@ -49,6 +49,7 @@ ansible test -m shell -a "docker exec gpt_test_sjf bash -c 'cp -f /data_turbo/ho
 ansible test -m shell -a "docker exec gpt_test_sjf bash -c 'chmod 644 ~/.ssh/config'"
 
 # 关闭所有python进程，并杀掉所有僵尸进程
-ansible test -m shell -a "docker exec gpt_test2_sjf bash -c 'pkill python'"
-ansible test -m shell -a "docker exec gpt_test2_sjf bash -c 'pkill defunct'"
+ansible test -m shell -a "docker exec gpt_test_sjf bash -c 'pkill python'"
+ansible test -m shell -a "docker exec gpt_test_sjf bash -c 'pkill defunct'"
 
+ansible test -m shell -a "cd /data_turbo/home/sunjinfeng/workspace && bash check.sh"
